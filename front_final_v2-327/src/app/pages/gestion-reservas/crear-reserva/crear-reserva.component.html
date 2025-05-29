@@ -1,0 +1,43 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Crear Reserva</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="reservaForm" (ngSubmit)="crearReserva()">
+        <ion-item>
+          <ion-label position="floating">Barbero</ion-label>
+          <ion-select formControlName="idUsuarioBarbero">
+            <ion-select-option *ngFor="let barbero of barberos" [value]="barbero.id">
+              {{ barbero.persona.nombre }} {{ barbero.persona.apellido }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-note color="danger" *ngIf="reservaForm.get('idUsuarioBarbero')?.touched && reservaForm.get('idUsuarioBarbero')?.invalid">
+          Seleccione un barbero
+        </ion-note>
+
+        <ion-item>
+          <ion-label position="floating">Fecha</ion-label>
+          <ion-input type="date" formControlName="fecha"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="reservaForm.get('fecha')?.touched && reservaForm.get('fecha')?.invalid">
+          La fecha es requerida
+        </ion-note>
+
+        <ion-item>
+          <ion-label position="floating">Hora</ion-label>
+          <ion-input type="time" formControlName="hora"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="reservaForm.get('hora')?.touched && reservaForm.get('hora')?.invalid">
+          La hora es requerida
+        </ion-note>
+
+        <ion-button expand="block" type="submit" class="ion-margin-top">
+          Crear Reserva
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content> 

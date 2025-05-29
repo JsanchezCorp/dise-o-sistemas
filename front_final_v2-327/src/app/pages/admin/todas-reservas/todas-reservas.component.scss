@@ -1,0 +1,90 @@
+.container {
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  
+  h2 {
+    margin: 0;
+    margin-left: 15px;
+  }
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px 10px;
+  
+  &:hover {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+  }
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.reserva {
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .info {
+    flex-grow: 1;
+
+    h3 {
+      margin: 0 0 10px 0;
+      color: #333;
+    }
+
+    p {
+      margin: 5px 0;
+      color: #666;
+
+      strong {
+        color: #333;
+      }
+    }
+  }
+
+  .actions {
+    .delete-btn {
+      background: none;
+      border: none;
+      color: #dc3545;
+      cursor: pointer;
+      padding: 5px;
+      
+      &:disabled {
+        color: #999;
+        cursor: not-allowed;
+      }
+      
+      &:not(:disabled):hover {
+        background-color: #ffebee;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.no-reservas {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  color: #666;
+} 

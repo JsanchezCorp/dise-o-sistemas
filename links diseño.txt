@@ -1,0 +1,7 @@
+links diseño
+
+git (mio con lo mostrado en la video llamada de diseño) = https://github.com/JsanchezCorp/dise-o-sistemas.git
+
+trello = https://trello.com/b/fNKe1cVj/appmovilbarberiav10
+
+git (compartido con oscar y diego ) = https://github.com/omareiza2023/Semestre-2025-A/tree/develop

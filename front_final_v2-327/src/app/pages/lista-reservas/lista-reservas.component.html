@@ -1,0 +1,55 @@
+<div class="container" style="height: 100vh; overflow-y: scroll;">
+  <div class="top-bar">
+    <button class="back-button" (click)="volver()">←</button>
+    <h2>Mis Reservas</h2>
+  </div>
+
+  <div class="lista">
+    <div class="reserva" *ngFor="let r of reservas">
+      <div class="info">
+        <h3>{{ r.servicio.nombre }}</h3>
+        <p>{{ r.servicio.descripcion }}</p>
+        <p><strong>Fecha:</strong> {{ r.fecha | date: 'medium' }}</p>
+        <p><strong>Barbero:</strong> {{ r.barbero?.persona?.nombre }} {{ r.barbero?.persona?.apellido }}</p>
+        <p><strong>Precio:</strong> ${{ r.servicio.precio | number:'1.0-0' }} COP</p>
+        <p><strong>Estado:</strong> {{ r.estado }}</p>
+      </div>
+      <div class="actions">
+        <button class="delete-btn" (click)="cancelarReserva(r.id)" title="Cancelar reserva" [disabled]="r.estado !== 'ACTIVA'">
+          <ion-icon name="trash-outline"></ion-icon>
+        </button>
+      </div>
+    </div>
+    
+    <div *ngIf="reservas.length === 0" class="no-reservas">
+      <p>No tienes reservas activas</p>
+    </div>
+  </div>
+</div>
+
+<ion-list>
+  <ion-item *ngFor="let r of reservas">
+    <ion-label>
+      <h2>Barbero: {{ r.barbero.persona.nombre }} {{ r.barbero.persona.apellido }}</h2>
+      <h3>Servicio: {{ r.servicio.nombre }}</h3>
+      <p>{{ r.servicio.descripcion }}</p>
+      <p>Precio: ${{ r.servicio.precio }}</p>
+      <p>Fecha: {{ r.fecha | date:'medium' }}</p>
+      <p>Estado: {{ r.estado }}</p>
+    </ion-label>
+    <ion-button 
+      slot="end" 
+      color="danger" 
+      fill="clear"
+      (click)="cancelarReserva(r.id)" 
+      title="Cancelar reserva"
+      *ngIf="r.estado === 'ACTIVA'"
+    >
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-list>
+
+<ion-button (click)="volver()">
+  Volver
+</ion-button>

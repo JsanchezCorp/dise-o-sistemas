@@ -1,0 +1,101 @@
+.container {
+  padding: 20px;
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.logo {
+  display: block;
+  margin: 20px auto;
+  width: 180px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.custom-select {
+  width: 100%;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  --border-radius: 8px;
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: #ccc;
+  --background: #fff;
+  --placeholder-color: #999;
+  margin-top: 0;
+}
+
+.actualizar-btn {
+  background-color: #f1b700;
+  color: #000;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 200px;
+  height: 50px;
+  display: block;
+  margin: 30px auto 0;
+  transition: background-color 0.3s ease;
+}
+
+.actualizar-btn:hover {
+  background-color: #e0a800;
+}
+
+/* Estilos específicos para ion-select */
+ion-select {
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  --placeholder-color: #999;
+  --placeholder-opacity: 1;
+  --background: #fff;
+  max-width: 100%;
+  width: 100%;
+}

@@ -1,0 +1,1 @@
+ALTER TABLE horario ALTER COLUMN dias_semana TYPE varchar(100); 
